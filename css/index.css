@@ -1,1 +1,18 @@
 *{padding: 0;margin: 0}
+.bannerSwiper{width: 100%; margin: 0 auto;}
+.swiper-container1 {width: 100%; }
+.swiper-container1 img{width: 100%; height: auto}
+#pagination{bottom: 60px}
+.paginationNum span{ width: 100px;height: 10px; background: #cccccc;opacity: 1; border-radius: 0;}
+.paginationNum .swiper-pagination-bullet-active{background: #ffffff;  }
+.ytxd-logo{position:absolute; width: 13%; top: 6%; left: 4%; z-index: 10;border-bottom: 1px solid #000000;padding-bottom: 15px}
+.ytxd-logo img{width: 100%}
+.navigation{position:absolute;left:5%; top:25%;width: 100px; height: 380px;z-index: 10;}
+.ui-widget.ui-widget-content{border: none !important;}
+.ui-widget-content{background: none!important;}
+.ui-state-active{background: none !important; font-weight: bold !important;border: none !important;color: #333333 !important;}
+.ui-state-active span{color: #333333}
+.menuChild.ui-widget.ui-widget-content{width: 130px;padding:0 10px;border: 1px solid #000000 !important;}
+.menuChild li{border-bottom: 1px solid #000000;}
+.menuChild li:last-child{border-bottom:none;}
+.menu{height: 380px;width: 50px}
