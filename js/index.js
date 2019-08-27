@@ -2,7 +2,9 @@
  * Created by lixinyu on 2019/8/21.
  */
 $(document).ready(function () {
-    //swiper轮播图
+    /**
+     * swiper轮播图
+     */
     var swiper = new Swiper('.swiper-container1', {
         pagination: {
             el: '.swiper-pagination',
@@ -12,7 +14,63 @@ $(document).ready(function () {
         observer: true,//修改swiper自己或子元素时，自动初始化swiper
         observeParents: true//修改swiper的父元素时，自动初始化swiper
     });
-    //导航条
+    /**
+     * 导航栏UI组件;
+     */
     $("#menu").menu();
+    // $("#tabs").tabs();
+    /**s
+     * 找标签元素的绝对位置.上边距和左边距
+     */
+    function osp(obj) {
+        var l=0;
+        var t=0;
+        while (obj){
+            l=l+obj.offsetLeft;
+            t=t+obj.offsetTop;
+            obj=obj.offsetParent;
+        }
+        return{left:l,top:t}
+    }
+    /**
+     * 楼层特效
+     */
+    function budding() {
+        var floor = $(".floor");
+        var spaned = $(".budding>span")
+        window.onscroll=function () {
+            var stop=document.documentElement.scrollTop||document.body.scrollTop;
+            let num = 0;
+            // 滚动到当前楼层圆圈变大
+            for(var i=0;i<floor.length;i++){
+                if (stop>=osp(floor[i]).top){
+                    num=i;
+                }
+                spaned[i].className="";
+            }
+            spaned[num].className="circle-active"
+        }
+        //点击圆圈时跳转到当前楼层
+        for (var j=0;j<floor.length;j++){
+            spaned[j].onclick=function () {
+                console.log(111)
+                for (var k=0;k<floor.length;k++){
+                    if (this==spaned[k]){
+                        document.documentElement.scrollTop=osp(floor[k]).top
+                        document.body.scrollTop=osp(floor[k]).top
+                    }
+                }
+            }
+        }
+    }
+    budding();
+    /**
+     * tab切换
+     */
+    $('.tab li').mouseover(function () {
+        console.log(1)
+        $(this).attr('class', "selected").siblings('li').removeAttr();
+        $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
+    });
 })
 
