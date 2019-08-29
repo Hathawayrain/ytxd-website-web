@@ -49,11 +49,12 @@ $(document).ready(function () {
                 spaned[i].className="";
             }
             spaned[num].className="circle-active"
+
+
         }
         //点击圆圈时跳转到当前楼层
         for (var j=0;j<floor.length;j++){
             spaned[j].onclick=function () {
-                console.log(111)
                 for (var k=0;k<floor.length;k++){
                     if (this==spaned[k]){
                         document.documentElement.scrollTop=osp(floor[k]).top
@@ -62,15 +63,38 @@ $(document).ready(function () {
                 }
             }
         }
+        //回顶部
+
+
     }
     budding();
     /**
      * tab切换
      */
     $('.tab li').mouseover(function () {
-        console.log(1)
         $(this).attr('class', "selected").siblings('li').removeAttr();
         $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
     });
+    $('.tab2 li').mouseover(function () {
+        $(this).attr('class', "select").siblings('li').removeClass("select");
+        // $(this).attr('class', "shows").siblings('div').removeClass( "shows");
+        // $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
+    });
+    /**
+     * 回到顶部
+     */
+    backtop.onclick=function () {
+        function back() {
+            var stop=document.documentElement.scrollTop||document.body.scrollTop;
+            stop-=300;
+            if (stop<=0){
+                stop=0;
+                clearInterval(time);
+            }
+            document.documentElement.scrollTop=stop
+            document.body.scrollTop=stop
+        }
+        time=setInterval(back,100)
+    }
 })
 
