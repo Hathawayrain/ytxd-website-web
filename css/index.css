@@ -28,7 +28,7 @@ p.text{    line-height: 20px!important;  letter-spacing: 2px!important; text-ind
 .floorTitle>span:last-child{font-size: 35px !important;}
 #tabs{width: 100%;}
 #tabs>ul{width: 70%;height: 325px;margin: 0 auto;}
-#tabs>ul>li{width: 24.5%; overflow: hidden; display: inline-block;cursor: pointer}
+#tabs>ul>li{width: 24.5%; overflow: hidden; display: inline-block;cursor: pointer;    padding-bottom: 20px;}
 #tabs>ul>li:hover{background:rgb(238,238,238);border-radius: 20px}
 .selected img{transition: all 0.3s linear 0s; }
 .selected img:hover{ -webkit-transform:scale(1.2); }
@@ -36,14 +36,14 @@ p.text{    line-height: 20px!important;  letter-spacing: 2px!important; text-ind
 #tabs>ul>li p{font-size: 20px;color: #4e4e4e;font-weight:bold;text-align: center;margin-top: 50px;font-weight: bold}
 .tab_content{width: 100%;height:420px;overflow:hidden;padding: 150px 8% 0 15%;display: none;}
 #show {display: block;}
-.tab_content:nth-child(1){background: url("../img/index/case1.jpg")center 100%;}
-.tab_content:nth-child(2){background: url("../img/index/case2.jpg")center 100%;}
-.tab_content:nth-child(3){background: url("../img/index/case3.jpg")center 100%;}
-.tab_content:nth-child(4){background: url("../img/index/case4.jpg")center 100%;}
-.tab_content>p{width: 100%;color: #eaeaea;font-size: 14px;margin-bottom: 35px;    background: rgba(0,0,0,0.2);     padding: 20px; }
+.tab_content:nth-child(1){background: url("../img/index/case1.jpg")center no-repeat; background-size:100% 100% }
+.tab_content:nth-child(2){background: url("../img/index/case2.jpg")center no-repeat;background-size:100% 100%}
+.tab_content:nth-child(3){background: url("../img/index/case3.jpg")center no-repeat;background-size:100% 100%}
+.tab_content:nth-child(4){background: url("../img/index/case4.jpg")center no-repeat;background-size:100% 100%}
+.tab_content>p{width: 100%;color: #eaeaea;font-size: 14px;margin-bottom: 35px;    background: rgba(0,0,0,0.2);     padding: 30px 20px; }
 span.more{border: 1px solid #ffffff;color: #f5f5f5;font-size: 14px;font-weight:bold;width: 105px;height: 40px;display: block;float: right;  line-height: 40px;  text-align: center; cursor: pointer;    border-radius: 5px;}
 span.more:hover{border-color: red;color: red;}
-.productImg{width:100%;height:700px;background: url("../img/index/productImg.jpg")center 100%;}
+.productImg{width:100%;height:700px;background: url("../img/index/productImg.jpg")center no-repeat;background-size:100% 100%}
 .productText{width: 45%;background: rgba(0,0,0,0.1);margin-top: 155px;float: right;padding: 5% 3.6% 2% 5%;}
 .productText>p{color: #eaeaea;;font-size: 14px;margin-bottom: 20px; }
 #tabSecond>ul{width: 70%;height: 170px;margin: 0 auto;}
