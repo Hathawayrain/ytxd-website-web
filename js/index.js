@@ -3,6 +3,10 @@
  */
 $(document).ready(function () {
     /**
+     * 加载公共底部
+     */
+    $('#footer').load('footer.html');
+    /**
      * swiper轮播图
      */
     var swiper = new Swiper('.swiper-container1', {
@@ -96,5 +100,6 @@ $(document).ready(function () {
         }
         time=setInterval(back,100)
     }
+
 })
 
