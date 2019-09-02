@@ -53,7 +53,14 @@ $(document).ready(function () {
                 spaned[i].className="";
             }
             spaned[num].className="circle-active"
+            // 吸顶(回到顶部)
 
+            if (stop>=osp(back).top) {
+                back.style.position = 'fixed'
+            }else if (stop<4103){
+                partner.style.position = 'relative'
+                back.style.position = 'absolute'
+            }
 
         }
         //点击圆圈时跳转到当前楼层
@@ -67,8 +74,6 @@ $(document).ready(function () {
                 }
             }
         }
-        //回顶部
-
 
     }
     budding();
