@@ -21,7 +21,7 @@
       <li><div>解决方案</div>
         <ul class="menuChild">
           <li><div>地方海关</div></li>
-          <li><div>区域多式联运</div></li>
+          <li><div>多式联运</div></li>
           <li><div>特殊监管</div></li>
         </ul>
       </li>
@@ -158,11 +158,33 @@
     </div>
   </div>
 </div>
-
+<!--底部footer-->
+<div id="footer"></div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="jQueryUI/jquery-ui.min.js"></script>
-<script src="js/index.js"></script>
+<script>
+/**
+   * 导航栏UI组件;
+   */
+  $("#menu").menu();
+  // $("#tabs").tabs();
+  /**s
+   * 找标签元素的绝对位置.上边距和左边距
+   */
+  function osp(obj) {
+    var l=0;
+    var t=0;
+    while (obj){
+      l=l+obj.offsetLeft;
+      t=t+obj.offsetTop;
+      obj=obj.offsetParent;
+    }
+    return{left:l,top:t}
+  }
+  /**加载公共底部*/
+  $('#footer').load('./footer.html');
+</script>
 </body>
 </html>
