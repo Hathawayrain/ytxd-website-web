@@ -3,8 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>联系我们</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/contactUs.css">
+    <link rel="stylesheet" href="jQueryUI/jquery-ui.min.css">
 </head>
 <body>
-
+<div id="header"></div>
+<!--banner大图-->
+<div class="banner ">
+    <img src="img/contactUs_banner.jpg" alt="" width="100%"  >
+</div>
+<!--tab切换 -->
+<div class="wb100 clearfix">
+ <ul class="content_title">
+     <li class="select">合作垂询</li>
+     <li>联系我们</li>
+ </ul>
+    <!--tab切换内容-->
+    <div class="content_contact clearfix">
+        <!--表单切换-->
+        <span class="show" style="width: 60% !important; height: 850px">
+           <form action="" class="form pt50">
+               <p class="f14 pt30" style="color: #4e4e4e;">您的当前位置:&nbsp联系我们>合作垂询</p>
+                <p class="f14 pt50 fb pb50" style="color: #333333;">远通信德秉承精诚合作,锐意进取的合作理念,愿与业界更多的合作伙伴达成共识,为用户提供优质服务!携手同行,合作共赢,我们在路上!</p>
+                <div>
+                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</label>
+                <input type="text" placeholder="请输入姓名" name="username" class="inp"><img src="img/icons/username.png" alt="" width="30px" class="form_icons">
+                    <em></em>
+                </div>
+                <div>
+                <label for="">联系电话:</label>
+                <input type="text"  name="telPhone" class="inp"><img src="img/icons/telPhone.png" alt=""  width="30px" class="form_icons">
+                    <em></em>
+                </div>
+                  <div>
+                <label for="">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位:</label>
+                <input type="text"  name="position" class="inp"><img src="img/icons/position.png" alt="" width="30px" class="form_icons">
+                    <em></em>
+                </div>
+                  <div>
+                <label for="">公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;司:</label>
+                <input type="text"  name="company" class="inp"><img src="img/icons/company.png" alt="" width="30px" class="form_icons">
+                    <em></em>
+                </div>
+                 <div>
+                <label for="">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区:</label>
+                <input type="text"  name="region" class="inp"><img src="img/icons/region.png" alt="" width="25px" class="form_icons top">
+                    <em></em>
+                </div>
+                <div>
+                <label for="">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label>
+                <input type="text"  name="email" class="inp"><img src="img/icons/email.png" alt="" width="25px" class="form_icons top">
+                    <em></em>
+                </div>
+                 <div class="clearfix">
+                <label for="">反馈问题:</label>
+               <textarea name="" id="" class=" text_box" value="problem"></textarea>
+                </div>
+                <div class="clearfix">
+                <button class="sumbit">提 交</button>
+                    </div>
+            </form>
+        </span>
+        <span  style="width: 100% !important;">
+              <p class="f14 pt30 pb20 wb60" style="color: #4e4e4e;margin: 0 auto;">您的当前位置:&nbsp联系我们>联系方式</p>
+                <!--图标列表-->
+            <ul class="contact_ul pt50">
+                    <li>
+                        <img src="img/icons/phone_not.png" alt="" class="contact_img">
+                        <!--鼠标悬浮展示内容-->
+                        <div class="suspension">
+                            <img src="img/icons/phone_suspension.png" alt="" class="block" style="margin: 40px auto">
+                            <img src="img/icons/line_suspension.png" alt="" class="block" width="100%"  style="margin: 0 auto 40px">
+                            <p class="suspension_text mb5" >电话1: 010-82627882</p>
+                        </div>
+                    </li>
+                    <li>
+                      <img src="img/icons/wechat_not.png" alt="" class="contact_img">
+                          <div class="suspension">
+                            <img src="img/icons/wechat_suspension.png" alt="" class="block" style="margin: 40px auto">
+                            <img src="img/icons/line_suspension.png" alt="" class="block" width="100%"  style="margin: 0 auto 40px">
+                            <p class="suspension_text mb5" >wechat1: 379282609</p>
+                        </div>
+                    </li>
+                    <li>
+                      <img src="img/icons/QQ_not.png" alt="" class="contact_img">
+                          <div class="suspension">
+                            <img src="img/icons/qq_suspension.png" alt="" class="block" style="margin: 40px auto">
+                            <img src="img/icons/line_suspension.png" alt="" class="block" width="100%"  style="margin: 0 auto 40px">
+                            <p class="suspension_text mb5" >QQ1: 379282609</p>
+                        </div>
+                    </li>
+                    <li>
+                     <img src="img/icons/email_not.png" alt="" class="contact_img">
+                          <div class="suspension">
+                            <img src="img/icons/email_suspension.png" alt="" class="block" style="margin: 40px auto">
+                            <img src="img/icons/line_suspension.png" alt="" class="block" width="100%"  style="margin: 0 auto 40px">
+                            <p class="suspension_text mb5" >email: ytxd@mastery.net.cn</p>
+                        </div>
+                    </li>
+                </ul>
+            <!--百度地图-->
+            <div id="allmap"></div>
+        </span>
+    </div>
+</div>
+<div id="footer"></div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/contactUs.js"></script>
+<script src="jQueryUI/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=EYE0qQG0GfkTkNGYmxUwLNq32PiajoR2"></script>
 </body>
 </html>

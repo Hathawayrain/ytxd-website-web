@@ -3,8 +3,9 @@
  */
 $(document).ready(function () {
     /**
-     * 加载公共底部
+     * 加载公共头部和底部
      */
+    $('#header').load('header.html');
     $('#footer').load('footer.html');
     /**
      * swiper轮播图
@@ -24,7 +25,7 @@ $(document).ready(function () {
     $("#menu").menu();
     // $("#tabs").tabs();
     /**s
-     * 找标签元素的绝对位置.上边距和左边距
+     * 楼层找标签元素的绝对位置.上边距和左边距
      */
     function osp(obj) {
         var l=0;
@@ -54,7 +55,6 @@ $(document).ready(function () {
             }
             spaned[num].className="circle-active"
             // 吸顶(回到顶部)
-
             if (stop>=osp(back).top) {
                 back.style.position = 'fixed'
             }else if (stop<4103){
