@@ -11,32 +11,16 @@
   <link rel="stylesheet" href="css/successCase.css">
 </head>
 <body>
+<!--头部-->
+<div id="header"></div>
 <!-- 首页轮播图 -->
 <div class="bannerSwiper">
-    <!-- 公司logo -->
-    <div class="ytxd-logo"><img src="img/YTXDlogo.png" alt=""></div>
-    <!-- 导航条 -->
-    <nav class="navigation" id="menu">
-      <li><div>首   页</div></li>
-      <li><div>解决方案</div>
-        <ul class="menuChild">
-          <li><div>地方海关</div></li>
-          <li><div>多式联运</div></li>
-          <li><div>特殊监管</div></li>
-        </ul>
-      </li>
-      <li><div>产   品</div></li>
-      <li><div>成功案例</div></li>
-      <li><div>技术中心</div></li>
-      <li><div>关于我们</div></li>
-      <li><div>联系我们</div></li>
-    </nav>
-    <!-- 轮播图 -->
-    <div class="swiper-container swiper-container1">
-        <div class="swiper-wrapper swiper_lbt">
-            <div class="swiper-slide"><img src="img/成功案例banner.jpg" alt=""></div>
-        </div>
+  <!-- 轮播图 -->
+  <div class="swiper-container swiper-container1">
+    <div class="swiper-wrapper swiper_lbt">
+      <div class="swiper-slide"><img src="img/成功案例banner.jpg" alt=""></div>
     </div>
+  </div>
 </div>
 <!--成功案例-->
 <div class="floor">
@@ -185,6 +169,7 @@
   }
   /**加载公共底部*/
   $('#footer').load('./footer.html');
+  $('#header').load('header.html');
 </script>
 </body>
 </html>
