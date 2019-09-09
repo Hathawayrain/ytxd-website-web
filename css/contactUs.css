@@ -1,7 +1,5 @@
 *{padding: 0;margin: 0;}
 .banner{width: 100%;min-height: 558px; position: relative}
-.ytxd-logo{position:absolute; width: 13%; top: 100px; left: 4%; z-index: 10;border-bottom: 1px solid #000000;padding-bottom: 15px}
-.ytxd-logo img{width: 100%;  }
 .content_title{width: 100%;height: 90px;border-bottom: 2px solid rgb(229,229,229);text-align: center; }
 .content_title li {display: inline-block;width:30%;font-size: 24px;line-height: 83px;border-bottom: 5px solid rgb(255,255,255)}
 .select{border-color: rgb(198,4,4) !important;}
@@ -23,13 +21,3 @@ label {  color: #4e4e4e; font-size: 16px; float: left;  line-height: 40px;  widt
 .suspension_text{color: #666666;text-align: center;font-size: 16px;}
 .contact_ul li:hover .suspension{opacity:1;height: 100%;transition: all 0.3s ease;border-radius: 10px}
 #allmap{ width: 100%;  height: 420px;  overflow: hidden;  margin: 0;  font-family: "微软雅黑";}
-/*导航*/
-.navigation{position:absolute;left:6%; top:230px;width: 100px; height: 380px;z-index: 10;}
-.ui-widget.ui-widget-content{border: none !important;}
-.ui-widget-content{background: none!important;}
-.ui-state-active{background: none !important; font-weight: bold !important;font-size:16px !important;border: none !important;color: #333333 !important;}
-.ui-state-active span{color: #333333}
-.menuChild.ui-widget.ui-widget-content{min-width: 120px;padding:0 10px;border: 1px solid #000000 !important;}
-.menuChild li{border-bottom: 1px solid #000000;text-align: center}
-.menuChild li:last-child{border-bottom:none;}
-/*导航样式结束*/

@@ -76,8 +76,6 @@
         *display: inline;
         margin-right: 60px;
         font-size: 18px;
-        height: 70px;
-        line-height: 75px;
         text-align: center;
         zoom: 1;
         padding-bottom: 5px;
@@ -129,7 +127,7 @@
 
             <div class="nav fr mr10">
                 <ul>
-                    <li class="on"><a href="index.html">首页</a></li>
+                    <li class="on" id="index"><a href="index.html" >首页</a></li>
                     <li><a href="solution.html">解决方案</a>
                         <div class="down-menu" style=" display: none; opacity: 1;">
                             <div>
@@ -139,20 +137,30 @@
                             </div>
                         </div>
                     </li>
-                    <li ><a href="product.html">产品</a></li>
-                    <li ><a href="successCase.html">成功案例</a></li>
-                    <li ><a href="techCenter.html">技术中心</a></li>
+                    <li ><a href="product.html" target="product">产品</a></li>
+                    <li ><a href="successCase.html" target="successCase">成功案例</a></li>
+                    <li ><a href="techCenter.html" target="techCenter">技术中心</a></li>
                     <li ><a href="">关于我们</a></li>
-                    <li ><a href="contactUs.html">联系我们</a></li>
+                    <li id="contactUs"><a href="contactUs.html" target="contactUs">联系我们</a></li>
                 </ul>
             </div>
         </div>
     </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
-    $('.nav ul li').click(function () {
-        $(this).attr('class', 'on').siblings('.nav ul li').removeAttr('class', 'on');
-    });
+    //点击时存储id
+    $('.nav ul li').on('click',function(){
+        sessionStorage.setItem('aClick',$(this).attr('id'));
+    })
+    // 从本地存储中获取存储的id
+    var aClick = sessionStorage.getItem('aClick');
+    if(aClick){
+        //改变id的字体颜色
+        $('#'+aClick).attr("class","on").siblings('.nav ul li').removeAttr('class', 'on');
+
+    }
+
+
     $(".nav ul li").on({
         "mouseenter":function () {
             if($(this).children(".down-menu").is("animated")){
