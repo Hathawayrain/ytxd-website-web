@@ -9,7 +9,7 @@ $(document).ready(function () {
      */
     $('.content_title li').click(function () {
         $(this).attr('class', 'select').siblings('.content_title li').removeAttr('class', 'select');
-        $('.content_contact span').eq($(this).index()).attr('class', 'show').siblings('.content_contact span').removeAttr('class', 'show');
+        $('.content>div').eq($(this).index()).attr('class', 'show').siblings('.content>div').removeAttr('class', 'show');
     });
     /**
      * 导航栏UI组件;
