@@ -9,7 +9,7 @@
 .item{display: inline-block;width: 100%;background: #fcfcfc;position: relative;}
 .item img{width: 50%;float: left;}
 .item .trigon{position: absolute;top: 50%;left: 50%;transform: translate(0%, -50%);width: 0;height: 0;border-width: 10px;border-style: solid;border-color: transparent transparent transparent #d8dada;}
-.introduce{display: inline-block;width: 30%;padding-left: 5%;padding-top: 5%;height: 100%;margin-bottom: 0;}
+.introduce{display: inline-block;width: 50%;padding-left: 5%;padding-top: 5%;height: 100%;margin-bottom: 0;}
 .e-tit{font-size: 12px;color: #666;}
 .c-tit{display: block;margin-bottom: 22px;font-size: 16px;font-weight: bold;}
 .intro{font-size: 12px;color: #666;line-height: 2;}
