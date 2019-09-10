@@ -137,40 +137,42 @@
                             </div>
                         </div>
                     </li>
-                    <li id="product"><a href="product.html" target="product">产品</a></li>
-                    <li id="successCase"><a href="successCase.html" target="successCase">成功案例</a></li>
-                    <li id="techCenter"><a href="techCenter.html" target="techCenter">技术中心</a></li>
+                    <li id="product"><a href="product.html">产品</a></li>
+                    <li id="successCase"><a href="successCase.html" >成功案例</a></li>
+                    <li id="techCenter"><a href="techCenter.html" >技术中心</a></li>
                     <li id="aboutUs"><a href="">关于我们</a></li>
-                    <li id="contactUs"><a href="contactUs.html" target="contactUs">联系我们</a></li>
+                    <li id="contactUs"><a href="contactUs.html">联系我们</a></li>
                 </ul>
             </div>
         </div>
     </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
-    //点击时存储id
-    $('.nav ul li').on('click',function(){
-        sessionStorage.setItem('aClick',$(this).attr('id'));
-    })
-    // 从本地存储中获取存储的id
-    var aClick = sessionStorage.getItem('aClick');
-    if(aClick){
-        //改变id的字体颜色
-        $('#'+aClick).attr("class","on").siblings('.nav ul li').removeAttr('class', 'on');
-
-    }
-    $(".nav ul li").on({
-        "mouseenter":function () {
-            if($(this).children(".down-menu").is("animated")){
-                return;
-            }
-            $(this).children(".down-menu").stop().fadeIn();
-            $(this).children('.nav-bg').stop().fadeIn();
-        },
-        "mouseleave":function () {
-            $(this).children(".down-menu").stop().fadeOut();
-            $(this).children(".nav-bg").stop().fadeOut();
-        },
+    $(function () {
+        //导航点击时存储id
+        $('.nav ul li').on('click',function(){
+            sessionStorage.setItem('aClick',$(this).attr('id'));
+        })
+        // 从本地存储中获取存储的id
+        var aClick = sessionStorage.getItem('aClick');
+        if(aClick){
+            //改变id的字体颜色
+            $('#'+aClick).attr("class","on").siblings('.nav ul li').removeAttr('class', 'on');
+        }
+        //二级菜单展示效果
+        $(".nav ul li").on({
+            "mouseenter":function () {
+                if($(this).children(".down-menu").is("animated")){
+                    return;
+                }
+                $(this).children(".down-menu").stop().fadeIn();
+                $(this).children('.nav-bg').stop().fadeIn();
+            },
+            "mouseleave":function () {
+                $(this).children(".down-menu").stop().fadeOut();
+                $(this).children(".nav-bg").stop().fadeOut();
+            },
+        })
     })
 </script>
 </body>
