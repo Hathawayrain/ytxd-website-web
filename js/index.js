@@ -5,7 +5,6 @@ $(document).ready(function () {
     /**
      * 加载公共头部和底部
      */
-
     $('#header').load('header.html');
     $('#footer').load('footer.html');
     /**
@@ -16,16 +15,12 @@ $(document).ready(function () {
             el: '.swiper-pagination',
             clickable: true,
         },
+        loop: true,
         autoplay: true,
         observer: true,//修改swiper自己或子元素时，自动初始化swiper
         observeParents: true//修改swiper的父元素时，自动初始化swiper
     });
     /**
-     * 导航栏UI组件;
-     */
-    $("#menu").menu();
-    // $("#tabs").tabs();
-    /**s
      * 楼层找标签元素的绝对位置.上边距和左边距
      */
     function osp(obj) {
