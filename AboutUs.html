@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="css/AboutUs.css">
     </head>
     <body>
-        <div id="menu"></div>
+        <!--头部-->
+        <div id="header"></div>
         <div class="imgs">
             <img src="img/关于我们banner.jpg" alt="">
         </div>
@@ -375,13 +376,15 @@
                 </div>
             </div>
         </div>
+        <!--底部footer-->
+        <div id="footer"></div>
     </body>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/AboutUs.js"></script>
     <script>
-        $(function() {
-            //调用公共menu
-            $('#menu').load('menus.html')
-        })
+         /**加载公共底部*/
+        $('#footer').load('./footer.html');
+        $('#header').load('header.html');
+</script>
     </script>
 </html>
