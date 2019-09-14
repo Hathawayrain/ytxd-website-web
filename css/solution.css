@@ -1,0 +1,159 @@
+.contenetone {
+	padding: 40px 8% 40px 8%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.conLeft {
+	width: 35%;
+	position: relative;
+}
+.conRight {
+	width: 60%;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	margin-left: 50px;
+}
+.conRight>.conImg{
+	height: 180px;
+	width: 330px;
+	margin: 7px 0 0 5px;
+}
+.conRight1 {
+	width: 65%;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	
+}
+.conLeft1{
+	width: 35%;
+	position: relative;
+	margin-left: 60px;
+}
+.conRight1>.conImg{
+	height: 180px;
+	width: 330px;
+	margin: 7px 0 0 5px;
+}
+.conImg>img{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.redIv {
+	display: inline-flex;
+	width: 24px;
+	height: 5px;
+	background: darkred;
+	margin-bottom: 20px;
+}
+.conTit {
+	font-weight: bold;
+	color: black;
+	font-size: 23px;
+	margin-bottom: 20px;
+}
+.conCon {
+	line-height: 25px;
+}
+.conButt {
+	position: absolute;
+	right: 12px;
+	bottom: 2px;
+	border: 1px solid red;
+	padding: 10px;
+	color: red;
+}
+.backImg {
+	background-image: url(../img/solution/left.jpg);
+	background-size: 100% 100%;
+	position: relative;
+}
+.backImg1 {
+	background-image: url(../img/solution/ppppsss_03.gif);
+	background-size: 100% 100%;
+}
+.backImg2{
+	background-image: url(../img/solution/ppppsss_07.gif);
+	background-size: 100% 100%;
+}
+.backImg3 {
+	background-image: url(../img/solution/ppppsss_09.gif);
+	background-size: 100% 100%;
+}
+.backImg4 {
+	background-image: url(../img/solution/ppppsss_17.gif);
+	background-size: 100% 100%;
+}
+.backImg5 {
+	background-image: url(../img/solution/ppppsss_19.gif);
+	background-size: 100% 100%;
+}
+.backImg6 {
+	background-image: url(../img/solution/ppppsss_23.gif);
+	background-size: 100% 100%;
+}
+.backImg7 {
+	background-image: url(../img/solution/ppppsss_24.gif);
+	background-size: 100% 100%;
+}
+.backImg8 {
+	background-image: url(../img/solution/WechatIMG41_03.gif);
+	background-size: 100% 100%;
+}
+.backImg9 {
+	background-image: url(../img/solution/WechatIMG41_05.gif);
+	background-size: 100% 100%;
+}
+.backImg10 {
+	background-image: url(../img/solution/WechatIMG41_09.gif);
+	background-size: 100% 100%;
+}
+.backImg11 {
+	background-image: url(../img/solution/WechatIMG41_10.gif);
+	background-size: 100% 100%;
+}
+.backImg:hover .mengBig{
+	display: block;
+}
+.backImg:hover .conCenter{
+	display: block;
+}
+.conImg:hover {
+	width: 340px;
+}
+.conImg {
+	position: relative;
+}
+.conImg:hover .mengBig{
+	display: block;
+}
+.conImg:hover .conCenter{
+	display: block;
+}
+.con {
+	margin-top: 12px;
+	margin-left: 12px;
+}
+.mengBig {
+	width: 100%;
+	height: 100%;
+	background: rgba(116,115,116,0.5);
+	display: none;
+}
+.conCenter {
+	display: none;
+	position: absolute;
+	top: 36%;
+	left: 21%;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	border: 3px solid rgba(255,255,255,0.4);
+}
+
