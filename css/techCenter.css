@@ -27,6 +27,7 @@
 .list:last-child{margin-right: 0;}
 .list img{width: 70px;height: 70px;padding-bottom: 24px;box-sizing: content-box;border-bottom: 3px solid transparent;}
 .list i{display: inline-block;width: 100%;height: 1px;background: #c2c2c2;margin-bottom: 14px;}
-.list p{margin-top: 16px;font-family: SourceHanSansCN ExtraLight;font-weight: 100;font-size: 22px;}
+.list p{margin-top: 16px;color: #333; font-family: SourceHanSansCN ExtraLight;font-weight: 100;font-size: 22px;}
 .list:hover img{border-bottom: 3px solid #c2c2c2;}
 .list:hover{border: 1px solid #c2c2c2;}
+.list:hover a{text-decoration: none;}
