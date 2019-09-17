@@ -16,7 +16,8 @@ address,caption,cite,code,dfn,em,i,strong,th,var{font-style:normal;font-weight:n
 ol,ul{list-style:none;}
 caption,th{text-align:left;}
 q:before,q:after{content:'';}
-.red{color: red}
+.red{color: red !important;}
+.white{color: #ffffff !important;}
 .wb100{width: 100% !important;}
 .wb60{width: 60% !important;}
 abbr,acronym{border:0;}
