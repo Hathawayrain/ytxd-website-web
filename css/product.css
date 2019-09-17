@@ -37,6 +37,13 @@
 	z-index: 5;
 	color: white;
 	background: rgba(116,115,116,0.5);
+	display: none;
+}
+.oneimg:hover .mengTitle {
+	display: block;
+}
+.oneimg:hover .displayHide {
+	display: none;
 }
 .mengHeader {
 	text-align: center;
