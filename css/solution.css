@@ -3,6 +3,8 @@
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
+	min-height: calc(500px);
+	/*height: 460px;*/
 }
 .conLeft {
 	width: 35%;

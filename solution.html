@@ -15,15 +15,6 @@
 	<body>
 		<div id="header"></div>
 		<div class="floor bannerSwiper">
-			<!--楼层效果-->
-			<div id="menu1" class="budding">
-				<span class="circle circle-active"></span>
-				<span class="circle"></span>
-				<span class="circle"></span>
-				<span class="circle"></span>
-				<span class="circle"></span>
-				<span class="circle"></span>
-			</div>
 			<div class="swiper-container swiper-container1">
 				<div class="swiper-slide"><img src="img/解决方案banner.jpg" alt=""></div>
 			</div>
@@ -139,9 +130,13 @@
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/swiper.min.js"></script>
 		<script src="jQueryUI/jquery-ui.min.js"></script>
-		<script src="js/index.js"></script>
+		<!--<script src="js/index.js"></script>-->
 		<script src="js/techCenter.js"></script>
 		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#header').load('header.html');
+				$('#footer').load('footer.html'); 
+			});
 			$(".conImg").mouseover(function(){
             $(this).stop().animate({width:"380px",height:"200px"},100);
 //          $(this).stop().animate({right:"40px"},100);
@@ -150,8 +145,6 @@
         $(".conImg").mouseout(function(){
             $(this).stop().animate({width:"330px",height:"180px"},100);
         })
-			  $('#footer').load('../footer.html');
-   			  $('#header').load('../header.html');
 		</script>
 	</body>
 
