@@ -11,8 +11,4 @@ $(document).ready(function () {
         $(this).attr('class', 'select').siblings('.content_title li').removeAttr('class', 'select');
         $('.content>div').eq($(this).index()).attr('class', 'show').siblings('.content>div').removeAttr('class', 'show');
     });
-    /**
-     * 导航栏UI组件;
-     */
-    $("#menu").menu();
 })

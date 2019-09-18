@@ -149,24 +149,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="jQueryUI/jquery-ui.min.js"></script>
 <script>
-/**
-   * 导航栏UI组件;
-   */
-  $("#menu").menu();
-  // $("#tabs").tabs();
-  /**s
-   * 找标签元素的绝对位置.上边距和左边距
-   */
-  function osp(obj) {
-    var l=0;
-    var t=0;
-    while (obj){
-      l=l+obj.offsetLeft;
-      t=t+obj.offsetTop;
-      obj=obj.offsetParent;
-    }
-    return{left:l,top:t}
-  }
   /**加载公共底部*/
   $('#footer').load('./footer.html');
   $('#header').load('header.html');
