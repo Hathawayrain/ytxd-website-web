@@ -1,9 +1,9 @@
 .floor{height: 100%;margin-bottom: 100px;}
 .success-floortit{width: 100%; text-align: center;margin-bottom: 36px;}
-.success-floortit::after{display: inline-block;width: 65%;content: '';border-bottom: 1px solid #333;}
+.success-floortit::after{display: inline-block;width: 65%;content: '';margin-left: 50%;transform: translateX(-50%); border-bottom: 1px solid #333;}
 .floor .introduce{font-size: 12px;text-align: center;color: #888;margin-bottom: 30px;}
 .content{width: 80%; height: 100%;margin: 0 auto;}
-.content a {position: relative;display: inline-block;color: #333;}
+.content a {position: relative;display: inline-block;width: 100%;color: #333;}
 .list{display: inline-block; width: 100%;font-size: 0;}
 .list-box{display: inline-block;width: 32.3%;font-size: 0;margin-right: 8px;margin-top: 10px;vertical-align: middle;}
 .list-box:last-child{margin-right: 0;}
@@ -16,8 +16,8 @@
 .list-box .center-name{position: absolute;font-size: 12px;left: 50%;transform: translate(-50%);top: 50%;}
 .list .long-box{display: inline-block;width: 65.6%;vertical-align: top;margin-top: 8px;font-size: 0;}
 .long-box img{width: 100%;}
-.all-box{display: inline-block;font-size: 0;margin-top: 10px;vertical-align: middle;}
-.all-box a{width: 32.3%;margin-right: 12px;background: #333}
+.all-box{display: inline-block;font-size: 0;margin-top: 10px;vertical-align: middle;width: 100%;}
+.all-box a{width: 32.3%;margin-right: 8px;background: #333}
 .all-box a:last-child{margin: 0;}
 .list a:hover{transform:translate(0,-4px);background: #333;transition:transform 1s;}
 .list a:hover img{opacity:0.6;transition:transform 1s;}
