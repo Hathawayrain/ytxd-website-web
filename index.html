@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <title>远通信德</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="jQueryUI/jquery-ui.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
 </head>
 <body>
+<!--翻页导航-->
+<!--<div id="menu1" class="budding">-->
+<!--<span data-menuanchor="firstPage" class="circle circle-active "></span>-->
+<!--<span data-menuanchor="secondPage" class="circle"></span>-->
+<!--<span data-menuanchor="thirdPage" class="circle"></span>-->
+<!--<span data-menuanchor="fourthPage" class="circle"></span>-->
+<!--<span data-menuanchor="fifthPage" class="circle"></span>-->
+<!--<span data-menuanchor="lastPage" class="circle"></span>-->
+<!--</div>-->
+<div id="pageContain">
 <!--头部-->
 <div id="header"></div>
     <!-- 首页 -->
-<div class="floor bannerSwiper">
-    <!--楼层效果-->
-    <div id="menu1" class="budding">
-        <span class="circle circle-active"></span>
-        <span class="circle"></span>
-        <span class="circle"></span>
-        <span class="circle"></span>
-        <span class="circle"></span>
-        <span class="circle"></span>
-    </div>
+<div class="floor bannerSwiper section ">
     <!-- 轮播图 -->
     <div class="swiper-container swiper-container1">
         <div class="swiper-wrapper swiper_lbt">
@@ -37,9 +38,9 @@
     </div>
 </div>
 <!--解决方案-->
-<div class="floor">
+<div class="floor section">
     <!--栏目头部-->
-    <div class="floorTitle">
+    <div class="floorTitle" style="margin-bottom: 0">
         <img src="img/index/solution.png" alt="">
         <span class="solutionText">解决方案</span>
         <img src="img/index/redSlash.png" alt="" >
@@ -84,7 +85,7 @@
     </div>
 </div>
 <!--产品介绍-->
-<div class="floor">
+<div class="floor section">
     <!--栏目头部-->
     <div class="floorTitle" >
         <img src="img/index/solution.png" alt="">
@@ -102,7 +103,7 @@
     </div>
 </div>
 <!--成功案例-->
-<div class="floor">
+<div class="floor section">
     <!--栏目头部-->
     <div class="floorTitle">
         <img src="img/index/solution.png" alt="">
@@ -137,7 +138,7 @@
     </div>
 </div>
 <!--公司简介-->
-<div class="floor" style="background: rgb(242,241,241);padding: 0 30px">
+<div class="floor section" style="background: rgb(242,241,241);padding: 0 30px">
     <!--栏目头部-->
     <div class="floorTitle" style="margin-bottom:0">
         <img src="img/index/solution.png" alt="">
@@ -154,7 +155,7 @@
     </div>
 </div>
 <!--合作伙伴-->
-<div class="floor" id="partner" style="position: relative">
+<div class="floor section" id="partner">
     <!--栏目头部-->
     <div class="floorTitle">
         <img src="img/index/solution.png" alt="">
@@ -163,18 +164,52 @@
         <span class="solutionText" >PARTNER</span>
     </div>
     <!--回顶部icon-->
-     <div class="back" id="back">
-         <img src="img/index/top.png" alt="" id="backtop">
-        <img src="img/index/phone.png" alt="" class="shake">
-         <img src="img/index/WeChat.png" alt="" class="shake">
-     </div>
+     <!--<div class="back" id="back">-->
+         <!--<img src="img/index/top.png" alt="" id="backtop">-->
+        <!--<img src="img/index/phone.png" alt="" class="shake">-->
+         <!--<img src="img/index/WeChat.png" alt="" class="shake">-->
+     <!--</div>-->
      <!--大图片-->
     <img src="img/index/partners.png"style="width:70%;margin: 0 auto 130px;display: block">
 </div>
-<div id="footer"></div>
+    <!--底部-->
+    <div class=" indexFooter section">
+        <div class="footerLeft">
+            <form action="">
+                <input type="text" class="formSearch" placeholder="快速查询">
+                <img src="img/index/footer_icon1.png" alt="" class="footer_icon1">
+            </form>
+            <div>
+                <span style="font-size: 17px">咨询热线 :</span>
+                <p  style="font-size: 40px" class="shake-slow">010-82627882</p>
+            </div>
+        </div>
+        <div class="footerRight">
+            <ul class="footerNav">
+                <li>首&nbsp &nbsp页</li>
+                <li>解决方案</li>
+                <li>产&nbsp &nbsp品</li>
+                <li>成功案例</li>
+                <li>技术中心</li>
+                <li>关于我们</li>
+                <li>联系我们</li>
+            </ul>
+            <ul class="footerDetails">
+                <li ><i><img src="img/index/footer_icon2.png" alt="" width="35px" class="shake"></i>
+                    <span>地址: 北京市海淀区 中关村东路89号恒兴大厦5层G室</span></li>
+                <li><i><img src="img/index/footer_icon3.png" alt=""  width="35px" class="shake"></i>
+                    <span>邮箱: ytxd@mastery.net.cn</span></li>
+                <li><i><img src="img/index/footer_icon4.png" alt=""  width="35px" class="shake"></i>
+                    <span>网址: www.mastery.net.cn</span>
+                    <!--<span>FRESH-P&nbsp;版权所有&nbsp;京ICP备 : 060066808号&nbsp;物流精英许可证编号:&nbsp;京B-&nbsp;2019000004</span>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/swiper.min.js"></script>
-<script src="jQueryUI/jquery-ui.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

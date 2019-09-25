@@ -2,6 +2,12 @@
  * Created by lixinyu on 2019/8/21.
  */
 $(document).ready(function () {
+
+    $('#pageContain').fullpage({
+        // anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage','fifthPage', 'lastPage'],
+        // menu: '#Menu1'
+        'navigation': true,
+    });
     /**
      * 加载公共头部和底部
      */
@@ -72,7 +78,7 @@ $(document).ready(function () {
         }
 
     }
-    budding();
+    // budding();
     /**
      * tab切换
      */
@@ -88,19 +94,19 @@ $(document).ready(function () {
     /**
      * 回到顶部
      */
-    backtop.onclick=function () {
-        function back() {
-            var stop=document.documentElement.scrollTop||document.body.scrollTop;
-            stop-=300;
-            if (stop<=0){
-                stop=0;
-                clearInterval(time);
-            }
-            document.documentElement.scrollTop=stop
-            document.body.scrollTop=stop
-        }
-        time=setInterval(back,100)
-    }
+    // backtop.onclick=function () {
+    //     function back() {
+    //         var stop=document.documentElement.scrollTop||document.body.scrollTop;
+    //         stop-=300;
+    //         if (stop<=0){
+    //             stop=0;
+    //             clearInterval(time);
+    //         }
+    //         document.documentElement.scrollTop=stop
+    //         document.body.scrollTop=stop
+    //     }
+    //     time=setInterval(back,100)
+    // }
 
 })
 
