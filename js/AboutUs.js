@@ -1,3 +1,10 @@
+$(document).ready(function () {
+    /**
+     * 加载公共头部和底部
+     */
+    $('#header').load('header.html');
+    $('#footer').load('footer.html');
+})
 var sub = 0
 // title tab
 $('.title ul li').click(function () {
@@ -5,20 +12,11 @@ $('.title ul li').click(function () {
     .parent().parent().next().children().eq($(this).attr('value')).addClass('divblock')
     .siblings().removeClass('divblock')
     $('.Subscript').children().eq(1).text($(this).text())
-})
-// 新闻中心左侧tab
-$('.contentLeft ul li').click(function () {
-    $(this).addClass('leftLiClick').siblings().removeClass('leftLiClick')
-    .parent().parent().prev().children().eq(2).text($(this).text())
-})
-// 员工关怀hover
-$('.careTop .left li').hover(function () {
-    $(this).addClass('careToplihover').siblings().removeClass('careToplihover')
-    .children('i').addClass('careTopIhover')
-})
-$('.careBootom .left li').hover(function () {
-    $(this).addClass('careToplihover').siblings().removeClass('careToplihover')
-    .children('i').addClass('careTopIhover')
+    if ($('.lihover').html() == '新闻中心') {
+        newsJudge($('.leftLiClick').html())
+    } else if ($('.lihover').html() == '员工关怀') {
+        Employess()
+    }
 })
 // 人才发展
 $('.developmentTop li').hover(function() {

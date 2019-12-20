@@ -13,7 +13,7 @@ label {  color: #4e4e4e; float: left;  line-height: 40px;  width: 17%; ;  }
 .form_icons{position: absolute;    right: 5px;  top: 5px;}
 .top{top: 10px !important;}
 .text_box{width:83%;height: 144px; resize: none;overflow: hidden;}
-.sumbit{width: 180px;height: 40px;background: rgb(198,4,4);color: #ffffff;font-size: 16px;display: block;margin: 50px auto 0;}
+.sumbit{width: 150px;height: 40px;line-height: 40px;background: rgb(198,4,4);color: #ffffff;font-size: 16px;display: block;margin: 50px auto 0;text-align: center;cursor: pointer;}
 .contact_ul{height: 340px;width: 80%; margin: 0 auto;}
 .contact_ul>li{display: inline-block;width: 24.5%; position: relative;transition: all 1s;}
 .contact_img{display: block;margin: 70px auto;}

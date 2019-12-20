@@ -1,12 +1,66 @@
 /**
  * Created by lixinyu on 2019/9/4.
  */
+/**
+ * 提交
+ */
+var WEBYTXD = "http://192.168.43.55:6002"
+$('.sumbit').click(function(){
+    let namereg = /^.{1,12}$/
+    let telreg = /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/
+    let emailreg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+    if ($("input[name='name']") .val() == '' || $("input[name='tel']") .val() == '') {
+        alert('姓名，电话不能为空')
+        return false
+    }
+    if (!namereg.test($("input[name='name']").val())) {
+        alert ('姓名内容长度最大为12位')
+        return false
+    }
+    if (!telreg.test($("input[name='tel']").val())) {
+        alert('电话号码格式不正确')
+        return false
+    }
+    console.log($("input[name='email']").val())
+    console.log(emailreg.test($("input[name='email']").val()))
+    if ($("input[name='email']").val() !="" && !emailreg.test($("input[name='email']").val())) {
+        alert('邮箱格式不正确')
+        return false
+    }
+    $.ajax({
+        type:'POST',
+        url:WEBYTXD+"/coop/add",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({
+            name:$("input[name='name']") .val(),
+            tel:$("input[name='tel']") .val(),
+            post:$("input[name='post']") .val(),
+            company:$("input[name='company']") .val(),
+            area:$("input[name='area']") .val(),
+            email:$("input[name='email']") .val(),
+            problem:$("textarea[name='problem']").val()
+        }), 
+        success:function(res){
+            alert(res.message)
+            $("input[name='name']").val("")
+            $("input[name='tel']").val("")
+            $("input[name='post']").val("")
+            $("input[name='company']").val("")
+            $("input[name='area']").val("")
+            $("input[name='email']").val("")
+            $("textarea[name='problem']").val("")
+        }
+    })
+})
 $(document).ready(function () {
     /**
      * 加载公共头部和底部
      */
     $('#header').load('header.html');
     $('#footer').load('footer.html');
+    
+    
     /**
      * tab切换
      */
