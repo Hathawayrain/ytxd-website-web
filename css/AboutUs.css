@@ -239,18 +239,33 @@
 }
 .careTop .left li{
     margin-bottom: 20px;
+    position: relative;
 }
 .careTop .left li:hover{
     cursor: pointer;
 }
 .careTop .left li i{
     display: none;
+    width:0;
+    height:0;
+    border-top:30px solid transparent;
+    border-bottom:30px solid transparent;
+    border-left:60px solid #f8f8f8;
+    position: absolute;
+    right: -43px;
+    top: 13px;
 }
 .careToplihover{
     background: #f8f8f8;
-    position: relative;
 }
 .careTopIhover{
+    display: block !important;
+}
+.careBottomlihover{
+    background: #f8f8f8;
+    position: relative;
+}
+.careBottomIhover{
     display: block !important;
     width:0;
     height:0;
@@ -265,18 +280,20 @@
     margin-bottom: 0px;
 }
 .careTop .left li .divlist{
-    width: 80%;
+    width: 85%;
     padding-left: 5%;
     float: left;
 }
 .careTop .left li .date{
     display: block;
     float: right;
+    width: 15%;
     height: 86px;
     line-height: 86px;
     padding-right: 20px;
 }
 .careTop .left li .divlist h1{
+    width: 13%;
     float: left;
     height: 86px;
     line-height: 86px;
@@ -286,6 +303,7 @@
     margin-right: 5%; 
 }
 .careTop .left li .divlist div{
+    width: 72%;
     float: left;
     height: 86px;
 }
@@ -296,13 +314,23 @@
     font-weight: 100;
     font-family: SourceHanSansCN-ExtraLight;
     margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.careTop .left li .divlist div p{
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .careTop .right{
     width: 37%;
     float: left;
 }
 .careTop .right img{
-    display: block;
+    display: none;
     height: 300px;
     width: 100%;
 }
@@ -340,22 +368,27 @@
     right: -43px;
     top: 13px;
 }
+.caraImg{
+    display: block !important;
+}
 .careBootom .left li:last-child{
     margin-bottom: 0px;
 }
 .careBootom .left li .divlist{
-    width: 80%;
+    width: 85%;
     padding-left: 5%;
     float: left;
 }
 .careBootom .left li .date{
     display: block;
     float: right;
+    width: 15%;
     height: 86px;
     line-height: 86px;
     padding-right: 20px;
 }
 .careBootom .left li .divlist h1{
+    width: 13%;
     float: left;
     height: 86px;
     line-height: 86px;
@@ -365,6 +398,7 @@
     margin-right: 5%; 
 }
 .careBootom .left li .divlist div{
+    width: 72%;
     float: left;
     height: 86px;
 }
@@ -375,13 +409,23 @@
     font-weight: 100;
     font-family: SourceHanSansCN-ExtraLight;
     margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.careBootom .left li .divlist div p{
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .careBootom .right{
     width: 37%;
     float: left;
 }
 .careBootom .right img{
-    display: block;
+    display: none;
     height: 300px;
     width: 100%;
 }
