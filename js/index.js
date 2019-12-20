@@ -70,7 +70,7 @@ $(document).ready(function () {
                     }
                   solution+=`<span class="tab_content" style="background: url('${imagePath}') center no-repeat; background-size:100% 100%" >
                              <p class="text">${item.sketch}</p>
-                             <span class="more"><a href="productDetails.html?id=${item.articleId}" class="white">更多详情 &nbsp 》</a></span></span>`
+                             <span class="more"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="white">更多详情 &nbsp 》</a></span></span>`
                })
                  solution += `</div>`
                 $('#tabs').html(solution)
@@ -97,7 +97,7 @@ $(document).ready(function () {
                 }
                 productTxt+= ` <div class="productImg" style="background:url('${productImg}')center no-repeat;background-size:100% 100%;">
                     <div class="productText"><p  class="text">${res.resultList[0].sketch}</p>
-             <span class="more"><a href="productDetails.html?id=${res.resultList[0].articleId}" class="white">更多详情 &nbsp 》</a></span></div></div>`
+             <span class="more"><a href="productDetails.html?id=${res.resultList[0].articleId}" target="_blank" class="white">更多详情 &nbsp 》</a></span></div></div>`
                 $('#productImg').html(productTxt);
             }
         })
@@ -127,7 +127,7 @@ $(document).ready(function () {
                         }
                         success+=`<span><img src="${successImg}" alt="" width="100%">
                         <div class="caseContent"><p class="caseText2">${item.sketch}</p>
-                        <span class="more mores"><a href="productDetails.html?id=${item.articleId}" class="red">更多详情 &nbsp 》</a></span>
+                        <span class="more mores"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="red">更多详情 &nbsp 》</a></span>
                         </div></span>`
                     }
                 })

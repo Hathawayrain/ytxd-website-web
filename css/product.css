@@ -96,7 +96,7 @@
 .articleTwo {
 	height: 450px;
 	width: 75%;
-	margin: 0 auto;
+	margin: 20px auto;
 	display: flex;
 	justify-content: space-between;
 }
@@ -146,3 +146,7 @@
 	background: darkred;
 	margin: 28px 0px -4px 12.5%;
 }
+.detailsTitle{
+	width:60%;text-align: center;margin: 30px;font-size: 30px;color: #5e6d82;font-weight: bold;border-bottom:1px solid #4c4c4c;margin: 0 auto;padding: 28px;
+}
+
