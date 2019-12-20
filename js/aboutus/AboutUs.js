@@ -23,7 +23,7 @@ function news(categoryId,newrows,num) {
         success:function(res){
             $('.newsRight>ul').html('')
             res.resultList.forEach(res => {
-                $('.newsRight>ul').append('<a href="productDetails.html?'+res.articleId+'" target="_blank"><li class="clearfix">'+res.articleTitle+'<span>'+timestampToTime(res.createTime)+'<i>>></i></span> </li></a>')
+                $('.newsRight>ul').append('<a href="productDetails.html?id='+res.articleId+'" target="_blank"><li class="clearfix">'+res.articleTitle+'<span>'+timestampToTime(res.createTime)+'<i>>></i></span> </li></a>')
             });
             newnum = res.totelPage
             $('.newsRight>.paging ul li').eq(6).html('当前'+num+'/'+res.totelPage+'页,共'+res.totalSize+'条记录')

@@ -77,11 +77,10 @@
 						type: 'GET',
 						dataType: 'json',
 						success: function (res) {
-							console.log(res)
 							let	details = '';
 							res.resultList.forEach((item,index)=>{
 					details+=`<div class="detailsTitle"style="">${item.articleTitle}</div>
-							 <div class="centerText" style="padding: 36px 18%;text-align: center;line-height: 30px;">${item.content}</div>`
+							 <div class="centerText" style="padding: 36px 18%;line-height: 30px;">${item.content}</div>`
 
 							})
 							$('.contents').html(details)

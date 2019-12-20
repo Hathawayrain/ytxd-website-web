@@ -64,7 +64,7 @@ $(document).ready(function () {
                     <p class="tit">
                       <span class="tit-con">${element.articleTitle}</span>
                       <span class="desc">${element.sketch}</span><br>
-                      <a href="./productDetails.html?${element.articleId}" target="_blank"><em>更多详情 ></em></a>
+                      <a href="./productDetails.html?id=${element.articleId}" target="_blank"><em>更多详情 ></em></a>
                     </p>
                   </div>`)
                 });
