@@ -1,112 +1,165 @@
-/**
- * Created by lixinyu on 2019/8/21.
- */
+// var path1 = 'http://129.28.187.140:6002'
+var path1 = 'http://192.168.43.82:6002'
 $(document).ready(function () {
-
-    $('#pageContain').fullpage({
-        // anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage','fifthPage', 'lastPage'],
-        // menu: '#Menu1'
-        'navigation': true,
-    });
     /**
      * 加载公共头部和底部
      */
     $('#header').load('header.html');
     $('#footer').load('footer.html');
-    /**
-     * swiper轮播图
-     */
-    var swiper = new Swiper('.swiper-container1', {
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        loop: true,
-        autoplay: true,
-        observer: true,//修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true//修改swiper的父元素时，自动初始化swiper
-    });
-    /**
-     * 楼层找标签元素的绝对位置.上边距和左边距
-     */
-    function osp(obj) {
-        var l=0;
-        var t=0;
-        while (obj){
-            l=l+obj.offsetLeft;
-            t=t+obj.offsetTop;
-            obj=obj.offsetParent;
-        }
-        return{left:l,top:t}
-    }
-    /**
-     * 楼层特效
-     */
-    function budding() {
-        var floor = $(".floor");
-        var spaned = $(".budding>span")
-        window.onscroll=function () {
-            var stop=document.documentElement.scrollTop||document.body.scrollTop;
-            let num = 0;
-            // 滚动到当前楼层圆圈变大
-            for(var i=0;i<floor.length;i++){
-                if (stop>=osp(floor[i]).top){
-                    num=i;
-                }
-                spaned[i].className="";
-            }
-            spaned[num].className="circle-active"
-            // 吸顶(回到顶部)
-            if (stop>=osp(back).top) {
-                back.style.position = 'fixed'
-            }else if (stop<4103){
-                partner.style.position = 'relative'
-                back.style.position = 'absolute'
-            }
 
-        }
-        //点击圆圈时跳转到当前楼层
-        for (var j=0;j<floor.length;j++){
-            spaned[j].onclick=function () {
-                for (var k=0;k<floor.length;k++){
-                    if (this==spaned[k]){
-                        document.documentElement.scrollTop=osp(floor[k]).top
-                        document.body.scrollTop=osp(floor[k]).top
+
+    /**
+     * 轮播图动态数据+swiper插件滚动
+     */
+    function shuffling(path){
+        $.ajax({
+            url:`${path}/file/selectCategoryId?categoryId=10`,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                let shuffling = '';
+                for (let i =0;i<res.resultList.length;i++){
+                    shuffling+= `<div class="swiper-slide"><img src="${res.resultList[i].url}" alt="" style="width: 100%;height: 100%"></div> `
+                }
+                $('.swiper_lbt').append(shuffling);
+                var mySwiper = new Swiper('.swiper-container1', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    loop: true,
+                    autoplay: true,
+                    observer: true,//修改swiper自己或子元素时，自动初始化swiper
+                    observeParents: true//修改swiper的父元素时，自动初始化swiper
+                });
+                mySwiper.init();//初始化swiper
+            }
+        })
+    }
+    shuffling(path1);
+    /**
+     * 解决方案数据
+     */
+    function solution(path){
+        $.ajax({
+            url:`${path}/web/queryArticle?categoryId=50&rows=4&page=1`,
+            type: 'GET',
+            dataType: 'json',
+            success:function (res) {
+                let solution = '<ul class="tab">';
+                res.resultList.forEach((item,index)=>{
+                    let imagePath = "";
+                    if(item.files){
+                        for(let i=0; i<item.files.length; i++){
+                            if(item.files[i].categoryId === 230){
+                                imagePath = item.files[i].url;
+                            }
+                        }
+                    }
+                    solution+= ` <li><img src="${imagePath}"><p>${item.articleTitle}</p></li>`
+                })
+                solution += `</ul><div id="tabContent">`
+                res.resultList.forEach((item,index)=>{
+                    let imagePath = "";
+                    if(item.files){
+                        for(let i=0; i<item.files.length; i++){
+                            if(item.files[i].categoryId === 220){
+                                imagePath = item.files[i].url;
+                            }
+                        }
+                    }
+                  solution+=`<span class="tab_content" style="background: url('${imagePath}') center no-repeat; background-size:100% 100%" >
+                             <p class="text">${item.sketch}</p>
+                             <span class="more"><a href="productDetails.html?id=${item.articleId}" class="white">更多详情 &nbsp 》</a></span></span>`
+               })
+                 solution += `</div>`
+                $('#tabs').html(solution)
+                $('#tabContent').find(".tab_content").eq(0).attr("id","show");
+            }
+        })
+    }
+    solution(path1);
+    /**
+     * 产品数据
+     */
+    function product(path) {
+        $.ajax({
+            url: `${path}/web/queryArticle?categoryId=60&rows=1&page=1`,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                let productTxt = '';
+                let productImg = '';
+                for(let i=0;i<res.resultList[0].files.length;i++) {
+                    if(res.resultList[0].files[i].categoryId === 220){
+                        productImg = res.resultList[0].files[i].url;
                     }
                 }
+                productTxt+= ` <div class="productImg" style="background:url('${productImg}')center no-repeat;background-size:100% 100%;">
+                    <div class="productText"><p  class="text">${res.resultList[0].sketch}</p>
+             <span class="more"><a href="productDetails.html?id=${res.resultList[0].articleId}" class="white">更多详情 &nbsp 》</a></span></div></div>`
+                $('#productImg').html(productTxt);
             }
-        }
-
+        })
     }
-    // budding();
+    product(path1)
     /**
-     * tab切换
+     * 成功案例数据
      */
-    $('.tab li').mouseover(function () {
-        $(this).attr('class', "selected").siblings('li').removeAttr();
-        $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
-    });
-    $('.tab2 li').mouseover(function () {
-        $(this).attr('class', "select").siblings('li').removeClass("select");
-        // $(this).attr('class', "shows").siblings('div').removeClass( "shows");
-        // $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
-    });
+    function success(path){
+        $.ajax({
+            url: `${path}/web/queryArticle?categoryId=70&rows=4&page=1`,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                let success =` <ul class="tab2">`
+                res.resultList.forEach((item,index)=>{
+                success+=`<li class="select"><p class="caseText">${item.articleTitle}</p><div class="diamond shows"></div></li>`
+                })
+                success+=`</ul><div class="tabContent2">`
+                res.resultList.forEach((item,index)=>{
+                    if(item.files){
+                        let successImg = ''
+                        for(let i=0; i<item.files.length; i++){
+                            if(item.files[i].categoryId === 220){
+                                successImg = item.files[i].url;
+                            }
+                        }
+                        success+=`<span><img src="${successImg}" alt="" width="100%">
+                        <div class="caseContent"><p class="caseText2">${item.sketch}</p>
+                        <span class="more mores"><a href="productDetails.html?id=${item.articleId}" class="red">更多详情 &nbsp 》</a></span>
+                        </div></span>`
+                    }
+                })
+                success += `</div>`
+                $('#tabSecond').append(success);
+                $('.tabContent2').find(".tabContent2>span").eq(0).attr("id","show1");
+            }
+        })
+    }
+    success(path1)
     /**
-     * 回到顶部
+     * 首页滚屏
      */
-    // backtop.onclick=function () {
-    //     function back() {
-    //         var stop=document.documentElement.scrollTop||document.body.scrollTop;
-    //         stop-=300;
-    //         if (stop<=0){
-    //             stop=0;
-    //             clearInterval(time);
-    //         }
-    //         document.documentElement.scrollTop=stop
-    //         document.body.scrollTop=stop
-    //     }
-    //     time=setInterval(back,100)
-    // }
-
+    $('#pageContain').fullpage({
+        'navigation': true,
+    });
 })
+/**
+ * tab切换
+ */
+$(document).on("mouseover","#tabs .tab li",function(){
+    $(this).attr('class', "selected").siblings('li').removeAttr();
+    $('#tabContent>span').eq($(this).index()).attr('id', 'show').siblings('#tabContent>span').removeAttr('id', 'show');
+})
+
+$(document).on("mouseover","#tabSecond .tab2 li",function(){
+    $(this).attr('class', "select").siblings('li').removeClass("select");
+    $('.tabContent2>span').eq($(this).index()).attr('id', 'show1').siblings('.tabContent2>span').removeAttr('id', 'show2');
+})
+
+
+
+
+
 
