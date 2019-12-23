@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#header').load('header.html');
     $('#footer').load('footer.html');
     let categoryId = 130
-    let WEBYTXD = 'http://192.168.43.55:6002'
+    let WEBYTXD = 'http://172.20.10.4:6002'
     /**
      * tab切换
      */
@@ -33,7 +33,7 @@ $(document).ready(function () {
                     </div>`
                     )
                     for (let i=1;i<element.files.length;i++) {
-                        if (element.files[i].categoryId == 220) {
+                        if (element.files[i].categoryId == 240) {
                             $('.item').append(`<img src="${element.files[i].url}" alt="">`)
                         }
                     }
@@ -64,7 +64,7 @@ $(document).ready(function () {
                     <p class="tit">
                       <span class="tit-con">${element.articleTitle}</span>
                       <span class="desc">${element.sketch}</span><br>
-                      <a href="./productDetails.html?${element.articleId}" target="_blank"><em>更多详情 ></em></a>
+                      <a href="./productDetails.html?id=${element.articleId}" target="_blank"><em>更多详情 ></em></a>
                     </p>
                   </div>`)
                 });

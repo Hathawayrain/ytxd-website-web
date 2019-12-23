@@ -1,4 +1,7 @@
 
+.centerText a{
+ color: blue !important;
+}
 .centerTitle>img{
 	padding: 10px;margin-bottom: -17px;
 }
