@@ -12,8 +12,9 @@
 }
 .oneimg {
 	width: 33%;
-	margin-top: 5px;
+	margin: 10px 0;
 	position: relative;
+    float: left;
 }
 .displayHide {
 	width: 200px;
