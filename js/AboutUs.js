@@ -36,10 +36,13 @@ $('.Joinus .right .on').click(function() {
     }
 })
 $('.Joinus .right .next').click(function() {
-    if ($(this).siblings('.rightsmall').children('ul').css('left') == '0px') {
-        sub = 210
-        $(this).siblings('.rightsmall').children('ul').css('left', '-'+sub+'px')
+    let length = $(this).parent().children('.rightsmall').children('ul').children('li').length
+    if (sub >= 210 *(length-3)) {
+        sub = 0
+    } else {
+        sub += 210
     }
+    $(this).siblings('.rightsmall').children('ul').css('left', '-'+sub+'px')
 })
 // 荣誉资质
 $('.honorTab li').click(function() {

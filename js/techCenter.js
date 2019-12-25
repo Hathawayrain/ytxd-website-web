@@ -54,11 +54,11 @@ $(document).ready(function () {
                     $('.techNology').append(`<div class="tech-item">
                     <p class="num">
                       <span class="star">
-                        <img src="./img/techCenter/star1.png" alt="">
-                        <img src="./img/techCenter/star1.png" alt="">
-                        <img src="./img/techCenter/star1.png" alt="">
-                        <img src="./img/techCenter/star2.png" alt="">
-                        <img src="./img/techCenter/star2.png" alt="">
+                        <img src="img/techCenter/star1.png" alt="">
+                        <img src="img/techCenter/star1.png" alt="">
+                        <img src="img/techCenter/star1.png" alt="">
+                        <img src="img/techCenter/star2.png" alt="">
+                        <img src="img/techCenter/star2.png" alt="">
                       </span>
                       <span class="order">${index+1}</span>
                      

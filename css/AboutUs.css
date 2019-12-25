@@ -31,6 +31,26 @@
     font-weight: bold;
     font-family: MicrosoftYaHei-Bold;
 }
+@media screen and (max-width: 1440px) {
+    .title ul li{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1210px) {
+    .title ul li{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 1084px) {
+    .title ul li{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .title ul li{
+        font-size: 14px;
+    }
+}
 .title ul li:hover{
     cursor: pointer;
 }
@@ -92,6 +112,10 @@
     border-bottom: 1px dashed #2e2e2e;
     font-size: 14px;
 }
+.contentRight .top li a{
+    color: #2e2e2e;
+}
+
 .contentRight .top li:last-child{
     margin-bottom: 40px;
 }
@@ -171,12 +195,17 @@
     -o-transform:rotate(45deg); 	/* Opera */
 }
 .companyProfile P {
-    width: 72%;
+    width: 69%;
     float: left;
     margin-left: 10%;
     font-size: 16px;
     text-indent: 32px;
     line-height: 30px;
+}
+@media screen and (max-width: 1190px) {
+    .companyProfile P {
+        width: 60%;
+    }
 }
 .companyProfile:nth-of-type(4) P{
     padding-top: 10px;
@@ -280,14 +309,14 @@
     margin-bottom: 0px;
 }
 .careTop .left li .divlist{
-    width: 85%;
+    width: 81%;
     padding-left: 5%;
     float: left;
 }
 .careTop .left li .date{
     display: block;
     float: right;
-    width: 15%;
+    width: 17%;
     height: 86px;
     line-height: 86px;
     padding-right: 20px;
@@ -324,6 +353,9 @@
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+}
+.careTop .left li a{
+    color: #2e2e2e;
 }
 .careTop .right{
     width: 37%;
@@ -565,6 +597,9 @@
     overflow: hidden;
     position: relative;
 }
+.Joinus .right .rightsmall a{
+    color: #2e2e2e;
+}
 .Joinus .right span:hover{
     cursor: pointer;
 }
@@ -588,8 +623,8 @@
     right: -70px;
     top: 95px;
 }
-.Joinus .right ul{
-    width: 810px;
+.Joinus .rightsmall ul{
+    width: 0px;
     position: absolute;
     transition: .7s;
     left: 0px;

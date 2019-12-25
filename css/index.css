@@ -2,12 +2,12 @@
 p.text{    line-height: 25px!important;  letter-spacing: 2px!important; text-indent: 37px!important; }
 .floor{width: 100%;overflow: hidden; }
 /*swiper样式*/
-.bannerSwiper{width: 100%; margin: 0 auto; position: relative}
+.bannerSwiper{width: 100%; margin: 0 auto; position: relative; height: 800px;}
 .swiper-container1 {width: 100%; }
 .swiper-container1 img{width: 100%; height: auto}
-#pagination{bottom: 60px}
+#pagination{position:absolute; left: 0; top: 900px; margin: auto;}
 /*/导航栏*/
-.paginationNum span{ width: 100px;height: 10px; background: #cccccc;opacity: 1; border-radius: 0;}
+.paginationNum span{ width: 100px;height: 5px; background: #cccccc;opacity: 1; border-radius: 0;}
 .paginationNum .swiper-pagination-bullet-active{background: #ffffff;  }
 .budding{height: 375px;width: 50px;position: fixed; top:42%; right:6%;z-index: 10;}
 .budding>span{width: 50px;height: 50px;display:block;background: url("../img/index/cirtle.png")no-repeat center;}
@@ -27,21 +27,23 @@ p.text{    line-height: 25px!important;  letter-spacing: 2px!important; text-ind
 #tabs>ul>li img{margin: 60px auto 0;display: block;border-radius: 50%; }
 #tabs>ul>li p{font-size: 20px;color: #4e4e4e;font-weight:bold; min-height: 56px;text-align: center;margin-top: 50px;font-weight: bold}
 .tab_content{width: 100%;height:420px;overflow:hidden;padding: 150px 10% 0 20%;display: none;}
+.tab_content p .redtitle{ position: absolute; top: 15px; left: 20px; width: 30px; height: 6px; background: red;}
 #show {display: block;}
 #show1{display: block;}
-/*.tab_content:nth-child(1){background: url("../img/index/case1.jpg")center no-repeat; background-size:100% 100% }*/
-/*.tab_content:nth-child(2){background: url("../img/index/case2.jpg")center no-repeat;background-size:100% 100%}*/
-/*.tab_content:nth-child(3){background: url("../img/index/case3.jpg")center no-repeat;background-size:100% 100%}*/
-/*.tab_content:nth-child(4){background: url("../img/index/case4.jpg")center no-repeat;background-size:100% 100%}*/
-.tab_content>p{width: 100%;color: #f5f5f5;font-size: 17px;margin-bottom: 35px;    background: rgba(0,0,0,0.2);    padding: 30px 20px;  font-weight: bold;}
+/*.tab_content:nth-child(1){background: url("img/index/case1.jpg")center no-repeat; background-size:100% 100% }*/
+/*.tab_content:nth-child(2){background: url("img/index/case2.jpg")center no-repeat;background-size:100% 100%}*/
+/*.tab_content:nth-child(3){background: url("img/index/case3.jpg")center no-repeat;background-size:100% 100%}*/
+/*.tab_content:nth-child(4){background: url("img/index/case4.jpg")center no-repeat;background-size:100% 100%}*/
+.tab_content>p{width: 100%;color: #f5f5f5;font-size: 17px;margin-bottom: 35px;    background: rgba(0,0,0,0.2);    padding: 30px 20px;  font-weight: bold;  position: relative;}
 span.more{border: 1px solid #ffffff;    text-indent: 8px;font-size: 14px;font-weight:bold;width: 105px;height: 40px;display: block;float: right;  line-height: 40px;  text-align: center; cursor: pointer; }
 .productImg{width:100%;height:700px;background: url("../img/index/productImg.jpg")center no-repeat;background-size:100% 100%; overflow: hidden;}
 .productText{width: 45%;background: rgba(0,0,0,0.3);margin: 155px 7% 0 0;float: right;padding: 4% 3%; box-shadow: 5px 5px 9px 3px rgba(0,0,0,0.2);}
-.productText>p{color: #f5f5f5;;font-size: 17px;margin-bottom: 20px; font-weight: 500; }
+.productText>p{color: #f5f5f5;;font-size: 17px;margin-bottom: 20px; font-weight: 500; position: relative; }
+.productText p .redtitle{ position: absolute; top: -25px; left: 5px; width: 30px; height: 6px; background: red;}
 #tabSecond>ul{width: 80%;height: 170px;margin: 0 auto;}
 #tabSecond>ul>li{width: 24.5%; overflow: hidden; display: inline-block;cursor: pointer;}
-.tab2>li>div{   width: 20px;   height: 20px;   background-color: rgb(153,153,153);   transform:rotate(45deg);   -ms-transform:rotate(45deg); /* Internet Explorer */   -moz-transform:rotate(45deg); /* Firefox */   -webkit-transform:rotate(45deg); /* Safari 和 Chrome */   -o-transform:rotate(45deg); /* Opera */   margin:50px auto;/*让菱形浏览器上居中*/  }
-.tab2>li>p{min-height:56px;font-size: 20px;color: rgb(153,153,153);text-align: center;font-weight: bold}
+.tab2>li>a>div{   width: 20px;   height: 20px;   background-color: rgb(153,153,153);   transform:rotate(45deg);   -ms-transform:rotate(45deg); /* Internet Explorer */   -moz-transform:rotate(45deg); /* Firefox */   -webkit-transform:rotate(45deg); /* Safari 和 Chrome */   -o-transform:rotate(45deg); /* Opera */   margin:50px auto;/*让菱形浏览器上居中*/  }
+.tab2>li>a>p{min-height:56px;font-size: 20px;color: rgb(153,153,153);text-align: center;font-weight: bold}
 .select p{color: #4e4e4e !important;}
 .select div{background:#4e4e4e !important}
 .tabContent2>span{width: 100%;height: 400px;display: none;}
@@ -51,11 +53,12 @@ span.more{border: 1px solid #ffffff;    text-indent: 8px;font-size: 14px;font-we
 #back{width: 50px;position: absolute;top: 60px;right: 2%;}
 .back img{margin-bottom: 8px;display: block}
 .line{position:  absolute;top: 115px;width: 100%;height: 2px;border: 1px solid #f3eeee}
-.caseText2{margin-bottom: 30px;text-indent: 40px;line-height: 25px;font-size: 18px;letter-spacing: 2px;font-weight: 500;}
+.caseText2{margin-bottom: 30px;text-indent: 40px;line-height: 25px;font-size: 18px;letter-spacing: 2px;font-weight: 500; position: relative;}
+.caseText2 .redtitle{position: absolute; top: -25px; left: 5px; width: 30px; height: 6px; background: red;}
 /*/侧边导航样式*/
-#fp-nav ul li a span, .fp-slidesNav ul li a span{width: 15px !important;height: 15px !important; border: 2px solid black !important;}
-#fp-nav ul li, .fp-slidesNav ul li{width: 15px !important;height: 15px !important;margin: 15px !important;}
-#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span{background: black !important;}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{width: 31px !important;height: 31px !important; border: none !important; background: url('../img/index/rightweizhies.png') center center no-repeat !important; margin: auto;}
+#fp-nav ul li, .fp-slidesNav ul li{width: 31px !important;height: 31px !important;margin: 20px !important; text-align: center !important;}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span{width: 31px !important;height: 31px !important; background: url('../img/index/rightweizhi.png') center center no-repeat !important;}
 /*底部样式*/
 .indexFooter{background: url("../img/index/indexFooter.jpg")center no-repeat;background-size:100% 100%;width:100%;padding: 175px 0 100px 10%;}
 .footerLeft{width: 40%;height:100%;float: left;color: #ffffff;position: relative}
@@ -65,5 +68,6 @@ input.formSearch::-webkit-input-placeholder{color:rgba(152,156,151,0.7)}
 .footer_icon1{position: absolute;top:10px ;left:10px;width:30px; }
 .footerNav{width: 100%;display: inline-block;margin-bottom: 100px}
 .footerNav li { font-size:16px;display: inline-block;color: #f5f5f5;font-weight:bold;border-bottom: 2px solid rgb(238,238,238);margin-right: 20px;text-align: center;padding-bottom: 10px}
+.footerNav li a{color: #f5f5f5;}
 .footerDetails{font-size: 17px;color: rgb(153,153,153)}
 .footerDetails li{margin-bottom: 20px;}

@@ -7,7 +7,19 @@ $(document).ready(function () {
     $('#header').load('header.html');
     $('#footer').load('footer.html');
 
-
+    function imgCycle(imgurl) {
+        if (imgurl) {
+            let url = ''
+            imgurl.forEach(element => {
+                if(element.categoryId == 220){
+                    url = element.url
+                }
+            });
+            return url
+        }else {
+            return ''
+        }
+    }
     /**
      * 轮播图动态数据+swiper插件滚动
      */
@@ -56,7 +68,7 @@ $(document).ready(function () {
                             }
                         }
                     }
-                    solution+= ` <li><img src="${imagePath}"><p>${item.articleTitle}</p></li>`
+                    solution+= ` <li><a href="productDetails.html?id=${item.articleId}" target="_blank"><img src="${imagePath}"><p>${item.articleTitle}</p></a></li>`
                 })
                 solution += `</ul><div id="tabContent">`
                 res.resultList.forEach((item,index)=>{
@@ -69,8 +81,8 @@ $(document).ready(function () {
                         }
                     }
                   solution+=`<span class="tab_content" style="background: url('${imagePath}') center no-repeat; background-size:100% 100%" >
-                             <p class="text">${item.sketch}</p>
-                             <span class="more"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="white">更多详情 &nbsp 》</a></span></span>`
+                            <p class="text"><i class="redtitle"></i>${item.sketch}</p>
+                            <span class="more"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="white">更多详情 &nbsp 》</a></span></span>`
                })
                  solution += `</div>`
                 $('#tabs').html(solution)
@@ -91,12 +103,12 @@ $(document).ready(function () {
                 let productTxt = '';
                 let productImg = '';
                 for(let i=0;i<res.resultList[0].files.length;i++) {
-                    if(res.resultList[0].files[i].categoryId === 220){
+                    if(res.resultList[0].files[i].categoryId === 240){
                         productImg = res.resultList[0].files[i].url;
                     }
                 }
                 productTxt+= ` <div class="productImg" style="background:url('${productImg}')center no-repeat;background-size:100% 100%;">
-                    <div class="productText"><p  class="text">${res.resultList[0].sketch}</p>
+                    <div class="productText"><p  class="text"><i class="redtitle"></i>${res.resultList[0].sketch}</p>
              <span class="more"><a href="productDetails.html?id=${res.resultList[0].articleId}" target="_blank" class="white">更多详情 &nbsp 》</a></span></div></div>`
                 $('#productImg').html(productTxt);
             }
@@ -107,33 +119,46 @@ $(document).ready(function () {
      * 成功案例数据
      */
     function success(path){
+        $('#tabSecond .tab2').html('')
         $.ajax({
             url: `${path}/web/queryArticle?categoryId=70&rows=4&page=1`,
             type: 'GET',
             dataType: 'json',
             success: function (res) {
-                let success =` <ul class="tab2">`
-                res.resultList.forEach((item,index)=>{
-                success+=`<li class="select"><p class="caseText">${item.articleTitle}</p><div class="diamond shows"></div></li>`
-                })
-                success+=`</ul><div class="tabContent2">`
-                res.resultList.forEach((item,index)=>{
-                    if(item.files){
-                        let successImg = ''
-                        for(let i=0; i<item.files.length; i++){
-                            if(item.files[i].categoryId === 220){
-                                successImg = item.files[i].url;
-                            }
-                        }
-                        success+=`<span><img src="${successImg}" alt="" width="100%">
-                        <div class="caseContent"><p class="caseText2">${item.sketch}</p>
-                        <span class="more mores"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="red">更多详情 &nbsp 》</a></span>
-                        </div></span>`
-                    }
-                })
-                success += `</div>`
-                $('#tabSecond').append(success);
-                $('.tabContent2').find(".tabContent2>span").eq(0).attr("id","show1");
+                $('#tabSecond .tab2').append(`<li class="select"><a href="productDetails.html?id=${res.resultList[0].articleId}" target="_blank"><p class="caseText">${res.resultList[0].articleTitle}</p><div class="diamond shows"></div></a></li>`)
+                $('#tabSecond .tabContent2').append(`<span id="show1"><img src="${imgCycle(res.resultList[0].files)}" alt="" width="100%">
+                <div class="caseContent"><p class="caseText2"><i class="redtitle"></i>${res.resultList[0].sketch}</p>
+                <span class="more mores"><a href="productDetails.html?id=${res.resultList[0].articleId}" target="_blank" class="red">更多详情 &nbsp 》</a></span>
+                </div></span>`)
+                for (let a=1;a<res.resultList.length;a++) {
+                    $('#tabSecond .tab2').append(`<li><a href="productDetails.html?id=${res.resultList[a].articleId}" target="_blank"><p class="caseText">${res.resultList[a].articleTitle}</p><div class="diamond shows"></div></a></li>`)
+                    $('#tabSecond .tabContent2').append(`<span><img src="${imgCycle(res.resultList[a].files)}" alt="" width="100%">
+                    <div class="caseContent"><p class="caseText2"><i class="redtitle"></i>${res.resultList[a].sketch}</p>
+                    <span class="more mores"><a href="productDetails.html?id=${res.resultList[a].articleId}" target="_blank" class="red">更多详情 &nbsp 》</a></span>
+                    </div></span>`)
+                }
+                // let success =` <ul class="tab2">`
+                // res.resultList.forEach((item,index)=>{
+                // success+=`<li class="select"><a href="productDetails.html?id=${item.articleId}" target="_blank"><p class="caseText">${item.articleTitle}</p><div class="diamond shows"></div></a></li>`
+                // })
+                // success+=`</ul><div class="tabContent2">`
+                // res.resultList.forEach((item,index)=>{
+                //     if(item.files){
+                //         let successImg = ''
+                //         for(let i=0; i<item.files.length; i++){
+                //             if(item.files[i].categoryId === 220){
+                //                 successImg = item.files[i].url;
+                //             }
+                //         }
+                        // success+=`<span><img src="${successImg}" alt="" width="100%">
+                        // <div class="caseContent"><p class="caseText2"><i class="redtitle"></i>${item.sketch}</p>
+                        // <span class="more mores"><a href="productDetails.html?id=${item.articleId}" target="_blank" class="red">更多详情 &nbsp 》</a></span>
+                        // </div></span>`
+                //     }
+                // })
+                // success += `</div>`
+                // $('#tabSecond').append(success);
+                // $('.tabContent2').find(".tabContent2>span").eq(0).attr("id","show1");
             }
         })
     }
@@ -155,7 +180,7 @@ $(document).on("mouseover","#tabs .tab li",function(){
 
 $(document).on("mouseover","#tabSecond .tab2 li",function(){
     $(this).attr('class', "select").siblings('li').removeClass("select");
-    $('.tabContent2>span').eq($(this).index()).attr('id', 'show1').siblings('.tabContent2>span').removeAttr('id', 'show2');
+    $('.tabContent2>span').eq($(this).index()).attr('id', 'show1').siblings('.tabContent2>span').removeAttr('id', 'show1');
 })
 
 
