@@ -45,6 +45,7 @@ span.more{border: 1px solid #ffffff;    text-indent: 8px;font-size: 14px;font-we
 .select p{color: #4e4e4e !important;}
 .select div{background:#4e4e4e !important}
 .tabContent2>span{width: 100%;height: 400px;display: none;}
+.tabContent2>span img{display: block;width: 100%; height: 190px;}
 .caseContent{width: 100%;padding:70px 16% 80px}
 .mores{border-color: red !important;}
 #back{width: 50px;position: absolute;top: 60px;right: 2%;}

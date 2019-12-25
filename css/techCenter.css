@@ -11,7 +11,7 @@
 .item .trigon{position: absolute;top: 50%;left: 50%;transform: translate(0%, -50%);width: 0;height: 0;border-width: 10px;border-style: solid;border-color: transparent transparent transparent #d8dada;}
 .introduce{display: inline-block;width: 50%;padding-left: 5%;padding-right: 5%;padding-top: 5%;height: 100%;margin-bottom: 0;}
 .e-tit{font-size: 12px;color: #666;}
-.c-tit{display: block;margin-bottom: 12px;font-size: 16px;font-weight: bold;}
+.c-tit{display: block;margin-bottom: 12px;font-size: 16px;font-weight: bold; color: black;}
 .intro{font-size: 12px;color: #666;line-height: 2;}
 .item:nth-child(2n) img{float: right;width: 50%;}
 .item:nth-child(2n) .trigon{transform: rotate(180deg); left: 48.3%;}

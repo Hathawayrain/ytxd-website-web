@@ -16,6 +16,9 @@ $('.title ul li').click(function () {
         newsJudge($('.leftLiClick').html())
     } else if ($('.lihover').html() == '员工关怀') {
         Employess()
+    } else if ($('.lihover').html() == '荣誉资质') {
+        certificate()
+        certifi()
     }
 })
 // 人才发展

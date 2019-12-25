@@ -643,12 +643,14 @@
 .Tablion{
     border-bottom: 2px solid red;
 }
+.honor3{
+    display: none;
+}
 .honor{
     margin-top: 30px;
     width: 100%;
     padding-bottom: 42px;
     border-bottom: 1px solid #cecece;
-    display: none;
 }
 .honor .left{
     width: 40%;

@@ -4,7 +4,7 @@
 /**
  * 提交
  */
-var WEBYTXD = 'http://172.20.10.4:6002'
+var WEBYTXD = 'http://192.168.43.55:6002'
 $('.sumbit').click(function(){
     let namereg = /^.{1,12}$/
     let telreg = /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/
@@ -42,7 +42,7 @@ $('.sumbit').click(function(){
             problem:$("textarea[name='problem']").val()
         }), 
         success:function(res){
-            alert(res.message)
+            alert('感谢您的参与，很高兴与您合作')
             $("input[name='name']").val("")
             $("input[name='tel']").val("")
             $("input[name='post']").val("")

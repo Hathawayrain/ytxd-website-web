@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#header').load('header.html');
     $('#footer').load('footer.html');
     let categoryId = 130
-    let WEBYTXD = 'http://172.20.10.4:6002'
+    let WEBYTXD = 'http://192.168.43.55:6002'
     /**
      * tab切换
      */
@@ -18,7 +18,7 @@ $(document).ready(function () {
     function techCenter(){
         categoryId = 130
         $.ajax({
-            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId,
+            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId+"&rows=999&page=1",
             Type:'get',
             datatype:'json',
             success:function(res){
@@ -26,10 +26,12 @@ $(document).ready(function () {
                     $('.show').append(
                     `<div class="item">
                     <p class="trigon"></p>
+                    <a href="productDetails.html?id=${element.articleId}" target="_blank">
                     <p class="introduce">
                         <span class="c-tit">${element.articleTitle}</span>
                         <span class="intro">${element.sketch}</span>
                     </p>
+                    </a>
                     </div>`
                     )
                     for (let i=1;i<element.files.length;i++) {
@@ -44,7 +46,7 @@ $(document).ready(function () {
     function techNology(){
         categoryId = 140
         $.ajax({
-            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId,
+            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId+"&rows=999&page=1",
             Type:'get',
             datatype:'json',
             success:function(res){

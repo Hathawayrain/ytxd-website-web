@@ -18,7 +18,9 @@
 .long-box img{width: 100%;}
 .all-box{display: inline-block;font-size: 0;margin-top: 10px;vertical-align: middle;width: 100%;}
 .all-box a{width: 32.3%;margin-right: 8px;background: #333;margin-bottom: 10px;}
+.long-box a{margin-right: 8px;background: #333;margin-bottom: 10px; height: 250px;}
 .list a:hover{transform:translate(0,-4px);background: #333;transition:transform 1s;}
+.long-box a:hover{transform:translate(0,-4px);background: #333;transition:transform 1s;}
 .list a:hover img{opacity:0.6;transition:transform 1s;}
 .list a{transition:all 1s;}
 .list a:hover .name{left: 50%;top: 50%;transform: translate(-50%, -50%);text-align: center;border: 2px solid #fff;padding: 10px 25px;color: #fff;}

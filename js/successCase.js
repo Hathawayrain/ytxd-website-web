@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let categoryId = 70
-    let WEBYTXD = 'http://172.20.10.4:6002'
+    let WEBYTXD = 'http://192.168.43.55:6002'
     SuccessCase()
     // 转换时间戳
     function timestampToTime(timestamp) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
     }
     function SuccessCase(){
         $.ajax({
-            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId,
+            url:WEBYTXD+"/web/queryArticle?categoryId="+categoryId+"&rows=999&page=1",
             Type:'get',
             datatype:'json',
             success:function(res){

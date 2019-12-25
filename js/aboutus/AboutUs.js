@@ -1,7 +1,7 @@
-var WEBYTXD = 'http://172.20.10.4:6002'
+var WEBYTXD = 'http://192.168.43.55:6002'
 var num = 1
 var newnum = 1
-var newrows = 5
+var newrows = 10
 var categoryId = 80
 // 转换时间戳
 function timestampToTime(timestamp) {
