@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let categoryId = 70
-    let WEBYTXD = 'http://192.168.43.55:6002'
+    let WEBYTXD = '/mastary'
     SuccessCase()
     // 转换时间戳
     function timestampToTime(timestamp) {

@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#header').load('header.html');
     $('#footer').load('footer.html');
     let categoryId = 130
-    let WEBYTXD = 'http://192.168.43.55:6002'
+    let WEBYTXD = '/mastary'
     /**
      * tab切换
      */

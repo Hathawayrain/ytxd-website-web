@@ -1,4 +1,4 @@
-var WEBYTXD = 'http://192.168.43.55:6002'
+var WEBYTXD = '/mastary'
 var num = 1
 var newnum = 1
 var newrows = 10

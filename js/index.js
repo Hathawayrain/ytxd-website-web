@@ -1,5 +1,5 @@
 // var path1 = 'http://129.28.187.140:6002'
-var path1 = 'http://192.168.43.55:6002'
+var path1 = '/mastary'
 $(document).ready(function () {
     /**
      * 加载公共头部和底部
